@@ -1,0 +1,10 @@
+NET "clk" LOC = V10 | TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;					##提供50M的时钟
+##
+NET rst                  	LOC = N4 | IOSTANDARD = "LVCMOS33"; 		## 复位管脚约束
+##
+
+########通过biss协议读取编码器数据#####################
+//管脚约束按照实际要求定义
+NET rx                     		LOC = B2 | IOSTANDARD = "LVCMOS33";  	 	## 编码器向fpga输入数据管脚约束
+NET syn_biss_clk           		LOC = C4 | IOSTANDARD = "LVCMOS33"; 		## fpga给编码器提供时钟管脚约束
